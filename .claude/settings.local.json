@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node serve.mjs)",
+      "Bash(Start-Sleep -Seconds 2)",
+      "Bash(node screenshot.mjs http://localhost:3000)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Get-ChildItem \"$env:LOCALAPPDATA\\\\Programs\\\\nodejs\\\\\" -ErrorAction SilentlyContinue | Select-Object Name; Test-Path \"C:\\\\Program Files\\\\nodejs\\\\node.exe\")",
+      "PowerShell($env:PATH)",
+      "Bash(python -m http.server 3000)",
+      "Bash(which python3 *)",
+      "Read(//usr/**)",
+      "PowerShell($py = \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; if \\($py\\) { & $py --version } else { Write-Host \"python not found\" })",
+      "PowerShell($job = Start-Job -ScriptBlock { Set-Location \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\"; python -m http.server 3000 }; Start-Sleep -Seconds 3; Write-Host \"Server job started, ID: $\\($job.Id\\)\")",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 5 -UseBasicParsing; Write-Host \"OK $\\($r.StatusCode\\)\" } catch { Write-Host \"Error: $_\" })",
+      "PowerShell(Get-Job)",
+      "PowerShell(Receive-Job -Id 1 -ErrorAction SilentlyContinue)",
+      "PowerShell($ErrorActionPreference = 'SilentlyContinue'; $jobs = Get-Job; Write-Host \"Jobs: $\\($jobs.Count\\)\"; foreach \\($j in $jobs\\) { Write-Host \"$\\($j.Id\\) $\\($j.State\\)\" })",
+      "PowerShell($ErrorActionPreference = 'Continue'; $p = [System.Diagnostics.Process]::new\\(\\); $p.StartInfo.FileName = \"python\"; $p.StartInfo.Arguments = \"-m http.server 3000\"; $p.StartInfo.WorkingDirectory = \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\"; $p.StartInfo.UseShellExecute = $true; $p.StartInfo.WindowStyle = \"Minimized\"; $started = $p.Start\\(\\); Write-Host \"Started: $started, PID: $\\($p.Id\\)\")",
+      "PowerShell(Start-Sleep -Seconds 3; try { $r = Invoke-WebRequest -Uri \"http://localhost:3000\" -TimeoutSec 5 -UseBasicParsing; Write-Host \"Server OK - Status $\\($r.StatusCode\\)\" } catch { Write-Host \"Still not reachable: $_\" })",
+      "PowerShell(python -c \"import playwright; print\\('playwright available'\\)\" 2>$null)",
+      "PowerShell(python -c \"from selenium import webdriver; print\\('selenium available'\\)\" 2>$null)",
+      "PowerShell(python -c \"import subprocess; r=subprocess.run\\(['pip','show','playwright'],capture_output=True,text=True\\); print\\(r.stdout\\)\" 2>$null)",
+      "PowerShell(python -c \"from selenium import webdriver; from selenium.webdriver.chrome.options import Options; opts = Options\\(\\); opts.add_argument\\('--headless'\\); opts.add_argument\\('--window-size=1440,900'\\); driver = webdriver.Chrome\\(options=opts\\); driver.get\\('http://localhost:3000'\\); driver.save_screenshot\\('c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste/temporary screenshots/screenshot-1.png'\\); driver.quit\\(\\); print\\('Done'\\)\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\\\\temporary screenshots\")",
+      "Bash(gh auth *)",
+      "Bash(git --version)"
+    ]
+  }
+}
