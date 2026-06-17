@@ -772,6 +772,249 @@ tbody tr:hover td { background: #FAFBFF; }
 .doc-row:last-child { border-bottom: none; }
 .doc-row:hover { background: #FAFBFF; }
 
+.doc-row-link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 22px;
+  border-bottom: 1px solid var(--border-light);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.doc-row-link:last-child { border-bottom: none; }
+.doc-row-link:hover {
+  background: #F0F4FF;
+  box-shadow: inset 3px 0 0 #0C1BA8;
+}
+.doc-open-icon {
+  color: var(--muted);
+  opacity: 0;
+  flex-shrink: 0;
+  transition: opacity 0.15s, color 0.15s;
+}
+.doc-row-link:hover .doc-open-icon {
+  opacity: 1;
+  color: #0C1BA8;
+}
+
+/* ─── FONTE FINANCIADORA ────────────────────────────── */
+.subsec-sep {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 28px 0 20px;
+}
+.subsec-sep-label {
+  font-family: 'Syne', var(--font-display);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+}
+.subsec-sep-line {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.subsec-sep-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.kpi-row.cols-4-fonte { grid-template-columns: repeat(4, 1fr); }
+
+.fonte-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 18px 18px 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: box-shadow 0.18s;
+}
+.fonte-card:hover { box-shadow: 0 4px 16px rgba(12,27,168,0.08); }
+.fonte-card-accent {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.fonte-card-accent.purple { background: linear-gradient(90deg, #7C3AED, #A855F7); }
+.fonte-card-accent.blue   { background: linear-gradient(90deg, #0C1BA8, #4458E8); }
+.fonte-card-accent.green  { background: linear-gradient(90deg, #16A34A, #4ADE80); }
+.fonte-card-accent.orange { background: linear-gradient(90deg, #D45A00, #FB923C); }
+
+.fonte-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px 4px 6px;
+  border-radius: 100px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  width: fit-content;
+}
+.fonte-chip.purple { background: #F5F0FF; color: #7C3AED; }
+.fonte-chip.blue   { background: var(--blue-bg); color: var(--blue-text); }
+.fonte-chip.green  { background: var(--green-bg); color: var(--green-text); }
+.fonte-chip.orange { background: var(--orange-bg); color: var(--orange-text); }
+.fonte-chip-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.fonte-chip-dot.purple { background: #7C3AED; }
+.fonte-chip-dot.blue   { background: #0C1BA8; }
+.fonte-chip-dot.green  { background: #16A34A; }
+.fonte-chip-dot.orange { background: #D45A00; }
+
+.fonte-value {
+  font-family: 'Syne', var(--font-display);
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.fonte-value-sub {
+  font-size: 10.5px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.fonte-bar-track {
+  height: 5px;
+  background: var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+}
+.fonte-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 0.7s cubic-bezier(.4,0,.2,1);
+}
+.fonte-bar-fill.purple { background: linear-gradient(90deg, #7C3AED, #A855F7); }
+.fonte-bar-fill.blue   { background: linear-gradient(90deg, #0C1BA8, #4458E8); }
+.fonte-bar-fill.green  { background: linear-gradient(90deg, #16A34A, #4ADE80); }
+.fonte-bar-fill.orange { background: linear-gradient(90deg, #D45A00, #FB923C); }
+
+.fonte-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.fonte-bar-labels strong { color: var(--dark); font-weight: 700; }
+
+.fonte-mini-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+  border-top: 1px solid var(--border-light);
+}
+.fonte-mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 9.5px;
+  color: var(--muted);
+}
+.fonte-mini-stat span {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.fonte-mini-stat .dot-green  { background: var(--green-text); }
+.fonte-mini-stat .dot-yellow { background: #9A6800; }
+.fonte-mini-stat .dot-red    { background: var(--red-text); }
+
+.fonte-alerta {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  color: var(--orange-text);
+  background: var(--orange-bg);
+  border-radius: 6px;
+  padding: 4px 8px;
+  margin-top: 2px;
+  width: fit-content;
+}
+
+/* exec bar in table */
+.exec-bar-cell { min-width: 110px; }
+.exec-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.exec-bar-track {
+  flex: 1;
+  height: 4px;
+  background: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 50px;
+}
+.exec-bar-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--blue-text);
+}
+.exec-bar-fill.high   { background: var(--green-text); }
+.exec-bar-fill.medium { background: #9A6800; }
+.exec-bar-fill.low    { background: var(--red-text); }
+.exec-pct {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--dark);
+  white-space: nowrap;
+}
+
+.fonte-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 100px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+.fonte-tag.ep     { background: #F5F0FF; color: #7C3AED; }
+.fonte-tag.tgov   { background: var(--blue-bg); color: var(--blue-text); }
+.fonte-tag.prop   { background: var(--green-bg); color: var(--green-text); }
+.fonte-tag.feas   { background: var(--orange-bg); color: var(--orange-text); }
+
+.pending-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--red-text);
+}
+.pending-chip.zero { color: var(--green-text); }
+.pending-chip.zero svg { stroke: var(--green-text); }
+
+.detail-table-wrap {
+  overflow-x: auto;
+}
+
 .doc-icon {
   width: 32px; height: 32px;
   border-radius: 7px;
@@ -785,6 +1028,140 @@ tbody tr:hover td { background: #FAFBFF; }
 
 .doc-name { font-size: 12.5px; color: var(--dark); flex: 1; }
 .doc-meta { font-size: 11px; color: var(--muted); }
+
+/* ─── FONTE FILTER BAR ─────────────────────────────── */
+.fonte-filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.fonte-filter-label {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-right: 4px;
+  white-space: nowrap;
+  font-weight: 500;
+}
+.fonte-pill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border-radius: 100px;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  font-size: 12px;
+  font-weight: 500;
+  color: #6B7280;
+  cursor: pointer;
+  transition: border-color 0.18s, color 0.18s, background 0.18s, box-shadow 0.18s;
+  white-space: nowrap;
+  user-select: none;
+}
+.fonte-pill:hover { border-color: #9CA3AF; color: var(--dark); }
+.fonte-pill.active { box-shadow: 0 4px 14px rgba(0,0,0,0.15); }
+.fonte-pill-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ─── PLATFORM PANELS ──────────────────────────────── */
+.fonte-panels-wrap { margin-bottom: 24px; }
+.fonte-panel {
+  display: none;
+  grid-template-columns: 130px 1fr 148px;
+  gap: 28px;
+  align-items: center;
+  background: var(--white);
+  border-radius: 12px;
+  border: 1.5px solid var(--border-light);
+  padding: 22px 26px;
+  animation: fpIn 0.22s ease;
+}
+.fonte-panel.active { display: grid; }
+@keyframes fpIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: none; }
+}
+.fonte-panel-left {
+  display: flex; flex-direction: column; align-items: center; gap: 10px;
+}
+.fonte-panel-badge {
+  font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+  font-weight: 700; padding: 3px 10px; border-radius: 100px;
+}
+.fonte-panel-name {
+  font-family: 'Syne', var(--font-display);
+  font-size: 11.5px; font-weight: 700; text-align: center;
+  line-height: 1.35; letter-spacing: -0.01em;
+}
+.fonte-ring-wrap { position: relative; width: 96px; height: 96px; flex-shrink: 0; }
+.fonte-ring-label {
+  position: absolute; inset: 0; display: flex;
+  flex-direction: column; align-items: center; justify-content: center;
+  pointer-events: none;
+}
+.fonte-ring-pct {
+  font-family: 'Syne', var(--font-display);
+  font-size: 22px; font-weight: 800; line-height: 1; letter-spacing: -0.04em;
+}
+.fonte-ring-sub {
+  font-size: 9px; color: var(--muted); letter-spacing: 0.04em;
+  text-transform: uppercase; margin-top: 2px; text-align: center;
+  max-width: 60px; line-height: 1.25;
+}
+.fonte-panel-metrics {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px 22px;
+}
+.fpm-label {
+  font-size: 9.5px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 5px;
+}
+.fpm-val {
+  font-family: 'Syne', var(--font-display);
+  font-size: 22px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;
+}
+.fpm-sub { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.fpm-trend { font-size: 11px; margin-top: 3px; font-weight: 500; }
+.fpm-trend.up   { color: var(--green-text); }
+.fpm-trend.down { color: var(--red-text); }
+.fpm-trend.warn { color: var(--orange-text); }
+.fonte-sparkline-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+}
+.fonte-sparkline-label {
+  font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); text-align: center; line-height: 1.4;
+}
+.fonte-sparkline-months {
+  display: flex; justify-content: space-between; width: 120px;
+  font-size: 8px; color: var(--muted); letter-spacing: 0.03em;
+}
+
+/* ─── FAROL SOURCE TAGS ────────────────────────────── */
+.farol-fonte-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 2px 8px 2px 6px; border-radius: 4px;
+  font-size: 9.5px; font-weight: 600; letter-spacing: 0.04em;
+  margin-bottom: 10px;
+}
+.farol-fonte-tag-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.ftag-cad   { background: #E8F0FE; color: #1565C0; }
+.ftag-cad   .farol-fonte-tag-dot { background: #1565C0; }
+.ftag-rais  { background: #FFF3E0; color: #E65100; }
+.ftag-rais  .farol-fonte-tag-dot { background: #E65100; }
+.ftag-cnis  { background: #F3E5F5; color: #6A1B9A; }
+.ftag-cnis  .farol-fonte-tag-dot { background: #6A1B9A; }
+.ftag-sicon { background: #E8F5E9; color: #2E7D32; }
+.ftag-sicon .farol-fonte-tag-dot { background: #2E7D32; }
+.ftag-bf    { background: #FCE4EC; color: #880E4F; }
+.ftag-bf    .farol-fonte-tag-dot { background: #880E4F; }
+.farol-card.fc-hidden { display: none; }
 
 </style>
 </head>
@@ -892,7 +1269,7 @@ tbody tr:hover td { background: #FAFBFF; }
     <div class="user-row">
       <div class="user-avatar">AS</div>
       <div>
-        <div class="user-name">Ana Santos</div>
+        <div class="user-name">Marcela Santos</div>
         <div class="user-role">Gestora Estadual</div>
       </div>
     </div>
@@ -1179,7 +1556,7 @@ tbody tr:hover td { background: #FAFBFF; }
                 <td>Emendas Parlamentares - Custeio </td>
                 <td>R$ 1,3M</td>
                 <td>R$ 0,2M</td>
-                <td><span class="badge badge-red">12,1%</span></td>
+                <td><span class="badge badge-red">15,3%</span></td>
               </tr>
               <tr>
                 <td>Emendas Parlamentares - Investimento </td>
@@ -1362,7 +1739,7 @@ tbody tr:hover td { background: #FAFBFF; }
       <div class="card">
         <div class="card-head">
           <div class="card-title">Monitoramento por Serviço / Programa</div>
-          <button class="card-action">Relatório completo →</button>
+          <button class="card-action" onclick="window.open('relatorio-fisico-financeiro.html', '_blank')">Relatório completo →</button>
         </div>
         <table>
           <thead>
@@ -1429,7 +1806,7 @@ tbody tr:hover td { background: #FAFBFF; }
               <td><span class="status s-red">Crítico</span></td>
             </tr>
             <tr>
-              <td><strong>Casa da Mulher</strong></td>
+              <td><strong>Elas por Elas</strong></td>
               <td>80 atend/mês</td>
               <td>76</td>
               <td><span class="badge badge-green">95%</span></td>
@@ -1439,6 +1816,78 @@ tbody tr:hover td { background: #FAFBFF; }
               <td><span class="status s-green">Normal</span></td>
             </tr>
           </tbody>
+        </table>
+      </div>
+<div class="card">
+        <div class="card-head">
+          <div class="card-title">Monitoramento por Organização da Sociedade Civil</div>
+          <button class="card-action" onclick="window.open('relatorio-fisico-financeiro.html#tab-osc', '_blank')">Relatório completo →</button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Nome da OSC</th>
+              <th>Meta Física</th>
+              <th>Realizado</th>
+              <th>% Físico</th>
+              <th>Meta Fin.</th>
+              <th>Executado</th>
+              <th>% Fin.</th>
+              <th>Situação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Casa do Idoso</strong></td>
+              <td>1000 atend/mês</td>
+              <td>100</td>
+              <td><span class="badge badge-green">10%</span></td>
+              <td>R$ 250K</td>
+              <td>R$ 120K</td>
+              <td><span class="badge badge-yellow">48%</span></td>
+              <td><span class="status s-yellow">Atenção</span></td>
+            </tr>
+            <tr>
+              <td><strong>Casa da Mulher</strong></td>
+              <td>100 atend/mês</td>
+              <td>1</td>
+              <td><span class="badge badge-green">1%</span></td>
+              <td>R$ 340K</td>
+              <td>R$ 10K</td>
+              <td><span class="badge badge-red">2.9%</span></td>
+              <td><span class="status s-red">Crítico</span></td>
+            </tr>
+            <tr>
+              <td><strong> Instituto Crescer</strong></td>
+              <td>400 atend/mês</td>
+              <td>352</td>
+              <td><span class="badge badge-green">88%</span></td>
+              <td>R$ 180K</td>
+              <td>R$ 162K</td>
+              <td><span class="badge badge-green">90%</span></td>
+              <td><span class="status s-green">Normal</span></td>
+            </tr>
+            <tr>
+              <td><strong> AABB Social</strong></td>
+              <td>3100 atend/mês</td>
+              <td>1367</td>
+              <td><span class="badge badge-yellow">44%</span></td>
+              <td>R$ 340K</td>
+              <td>R$ 330</td>
+              <td><span class="badge badge-green">97%</span></td>
+              <td><span class="status s-green">Normal</span></td>
+            </tr>
+             <tr>
+              <td><strong> Centro de Referência Família</strong></td>
+              <td>50 atend/mês</td>
+              <td>40</td>
+              <td><span class="badge badge-green">80%</span></td>
+              <td>R$ 340K</td>
+              <td>R$ 330</td>
+              <td><span class="badge badge-green">97%</span></td>
+              <td><span class="status s-green">Normal</span></td>
+            </tr>
+            </tbody>
         </table>
       </div>
     </section>
@@ -1657,7 +2106,7 @@ tbody tr:hover td { background: #FAFBFF; }
             <div class="card-title">Documentos Recentes</div>
           </div>
           <div>
-            <div class="doc-row">
+            <a class="doc-row doc-row-link" href="prestacao-de-contas.html" target="_blank" rel="noopener">
               <div class="doc-icon green">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#1B6B18" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"/><line x1="4.5" y1="5" x2="9.5" y2="5"/><polyline points="4.5,8 6,9.5 9.5,6.5"/></svg>
               </div>
@@ -1666,8 +2115,9 @@ tbody tr:hover td { background: #FAFBFF; }
                 <div class="doc-meta">Aprovado · 12 mai 2025 · 4,2 MB</div>
               </div>
               <span class="badge badge-green">Aprovado</span>
-            </div>
-            <div class="doc-row">
+              <svg class="doc-open-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 2.5H2.5a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V9m-4-6.5H12.5m0 0v4.5m0-4.5L7 8"/></svg>
+            </a>
+            <a class="doc-row doc-row-link" href="prestacao-de-contas.html" target="_blank" rel="noopener">
               <div class="doc-icon blue">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#0D47A1" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"/><line x1="4.5" y1="5" x2="9.5" y2="5"/><line x1="4.5" y1="8" x2="7.5" y2="8"/></svg>
               </div>
@@ -1676,8 +2126,9 @@ tbody tr:hover td { background: #FAFBFF; }
                 <div class="doc-meta">Em análise · 03 jun 2025 · 1,8 MB</div>
               </div>
               <span class="badge badge-yellow">Em análise</span>
-            </div>
-            <div class="doc-row">
+              <svg class="doc-open-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 2.5H2.5a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V9m-4-6.5H12.5m0 0v4.5m0-4.5L7 8"/></svg>
+            </a>
+            <a class="doc-row doc-row-link" href="prestacao-de-contas.html" target="_blank" rel="noopener">
               <div class="doc-icon orange">
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="#8C3A00" stroke-width="1.5"><rect x="2" y="1" width="10" height="12" rx="1.5"/><line x1="7" y1="4.5" x2="7" y2="8.5"/><line x1="7" y1="10" x2="7" y2="11"/></svg>
               </div>
@@ -1686,10 +2137,325 @@ tbody tr:hover td { background: #FAFBFF; }
                 <div class="doc-meta">Pendente recurso · 28 mai 2025 · 0,9 MB</div>
               </div>
               <span class="badge badge-red">Glosada</span>
-            </div>
+              <svg class="doc-open-icon" width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5.5 2.5H2.5a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V9m-4-6.5H12.5m0 0v4.5m0-4.5L7 8"/></svg>
+            </a>
           </div>
         </div>
       </div>
+
+      <!-- ── SUBSECÇÃO: STATUS POR FONTE FINANCIADORA ── -->
+      <div class="subsec-sep">
+        <div class="subsec-sep-eyebrow">Análise por fonte</div>
+        <div class="subsec-sep-line"></div>
+        <div class="subsec-sep-label">Status por Fonte Financiadora</div>
+        <div class="subsec-sep-line"></div>
+      </div>
+
+      <div class="kpi-row cols-4-fonte" style="display:grid;gap:14px;margin-bottom:18px;">
+
+        <!-- Emendas Parlamentares -->
+        <div class="fonte-card">
+          <div class="fonte-card-accent purple"></div>
+          <div class="fonte-chip purple">
+            <span class="fonte-chip-dot purple"></span>
+            Emendas Parlamentares
+          </div>
+          <div>
+            <div class="fonte-value">R$ 1,24 M</div>
+            <div class="fonte-value-sub">8 instrumentos · Exercício 2025</div>
+          </div>
+          <div>
+            <div class="fonte-bar-track">
+              <div class="fonte-bar-fill purple" style="width:72%"></div>
+            </div>
+            <div class="fonte-bar-labels"><span>Execução financeira</span><strong>72%</strong></div>
+          </div>
+          <div class="fonte-mini-stats">
+            <div class="fonte-mini-stat"><span class="dot-green"></span>5 aprovadas</div>
+            <div class="fonte-mini-stat"><span class="dot-yellow"></span>2 em análise</div>
+            <div class="fonte-mini-stat"><span class="dot-red"></span>1 pendente</div>
+          </div>
+          <div class="fonte-alerta">
+            <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 2L13 12H1L7 2z"/><line x1="7" y1="6" x2="7" y2="9"/><line x1="7" y1="10.5" x2="7" y2="11.5"/></svg>
+            3 vencem em Set/2025
+          </div>
+        </div>
+
+        <!-- TransfereGOV / MDS -->
+        <div class="fonte-card">
+          <div class="fonte-card-accent blue"></div>
+          <div class="fonte-chip blue">
+            <span class="fonte-chip-dot blue"></span>
+            TransfereGOV · MDS
+          </div>
+          <div>
+            <div class="fonte-value">R$ 2,31 M</div>
+            <div class="fonte-value-sub">12 instrumentos · Exercício 2025</div>
+          </div>
+          <div>
+            <div class="fonte-bar-track">
+              <div class="fonte-bar-fill blue" style="width:84%"></div>
+            </div>
+            <div class="fonte-bar-labels"><span>Execução financeira</span><strong>84%</strong></div>
+          </div>
+          <div class="fonte-mini-stats">
+            <div class="fonte-mini-stat"><span class="dot-green"></span>8 aprovadas</div>
+            <div class="fonte-mini-stat"><span class="dot-yellow"></span>3 em análise</div>
+            <div class="fonte-mini-stat"><span class="dot-red"></span>1 glosada</div>
+          </div>
+          <div class="fonte-alerta" style="background:var(--red-bg);color:var(--red-text);">
+            <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 2L13 12H1L7 2z"/><line x1="7" y1="6" x2="7" y2="9"/><line x1="7" y1="10.5" x2="7" y2="11.5"/></svg>
+            1 glosa pendente de recurso
+          </div>
+        </div>
+
+        <!-- Recursos Próprios -->
+        <div class="fonte-card">
+          <div class="fonte-card-accent green"></div>
+          <div class="fonte-chip green">
+            <span class="fonte-chip-dot green"></span>
+            Recursos Próprios
+          </div>
+          <div>
+            <div class="fonte-value">R$ 540 K</div>
+            <div class="fonte-value-sub">6 instrumentos · Exercício 2025</div>
+          </div>
+          <div>
+            <div class="fonte-bar-track">
+              <div class="fonte-bar-fill green" style="width:91%"></div>
+            </div>
+            <div class="fonte-bar-labels"><span>Execução financeira</span><strong>91%</strong></div>
+          </div>
+          <div class="fonte-mini-stats">
+            <div class="fonte-mini-stat"><span class="dot-green"></span>6 aprovadas</div>
+            <div class="fonte-mini-stat"><span class="dot-yellow"></span>0 pendências</div>
+          </div>
+          <div class="fonte-alerta" style="background:var(--green-bg);color:var(--green-text);">
+            <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7l2.5 2.5L10 4.5"/></svg>
+            Todas regularizadas
+          </div>
+        </div>
+
+        <!-- FEAS / FNAS -->
+        <div class="fonte-card">
+          <div class="fonte-card-accent orange"></div>
+          <div class="fonte-chip orange">
+            <span class="fonte-chip-dot orange"></span>
+            FEAS / FNAS
+          </div>
+          <div>
+            <div class="fonte-value">R$ 890 K</div>
+            <div class="fonte-value-sub">7 instrumentos · Exercício 2025</div>
+          </div>
+          <div>
+            <div class="fonte-bar-track">
+              <div class="fonte-bar-fill orange" style="width:78%"></div>
+            </div>
+            <div class="fonte-bar-labels"><span>Execução financeira</span><strong>78%</strong></div>
+          </div>
+          <div class="fonte-mini-stats">
+            <div class="fonte-mini-stat"><span class="dot-green"></span>6 aprovadas</div>
+            <div class="fonte-mini-stat"><span class="dot-yellow"></span>1 em análise</div>
+          </div>
+          <div class="fonte-alerta">
+            <svg width="11" height="11" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 2L13 12H1L7 2z"/><line x1="7" y1="6" x2="7" y2="9"/><line x1="7" y1="10.5" x2="7" y2="11.5"/></svg>
+            Relatório FNAS vence Nov/2025
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tabela detalhada por fonte -->
+      <div class="card">
+        <div class="card-head" style="display:flex;align-items:center;justify-content:space-between;">
+          <div class="card-title">Detalhamento por Instrumento e Fonte</div>
+          <div style="display:flex;gap:8px;align-items:center;">
+            <span style="font-size:10px;color:var(--muted);">33 instrumentos · Total R$ 4,98 M</span>
+            <span class="badge badge-blue">2025</span>
+          </div>
+        </div>
+        <div class="detail-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Instrumento</th>
+                <th>Convenente / Entidade</th>
+                <th>Fonte</th>
+                <th>Valor Pactuado</th>
+                <th class="exec-bar-cell">Execução</th>
+                <th>Vencimento</th>
+                <th>Pendências</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">EP 2024-0842</td>
+                <td>APAE Municipal</td>
+                <td><span class="fonte-tag ep">Emenda Parl.</span></td>
+                <td>R$ 210.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:80%"></div></div>
+                    <span class="exec-pct">80%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Set/2025<br><span style="font-size:9.5px;color:var(--orange-text);font-weight:600;">⚠ 87 dias</span></td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-green">Aprovada</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">TFG 914.758</td>
+                <td>APAE Municipal</td>
+                <td><span class="fonte-tag tgov">TransfereGOV</span></td>
+                <td>R$ 210.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:100%"></div></div>
+                    <span class="exec-pct">100%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Dez/2025</td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-green">Aprovada</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">EP 2024-0915</td>
+                <td>Casa da Criança</td>
+                <td><span class="fonte-tag ep">Emenda Parl.</span></td>
+                <td>R$ 300.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill medium" style="width:60%"></div></div>
+                    <span class="exec-pct">60%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Set/2025<br><span style="font-size:9.5px;color:var(--orange-text);font-weight:600;">⚠ 87 dias</span></td>
+                <td><span class="pending-chip" style="color:var(--yellow-text);">
+                  <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="#9A6800" stroke-width="2"><circle cx="7" cy="7" r="5"/><line x1="7" y1="4.5" x2="7" y2="7.5"/><line x1="7" y1="9" x2="7" y2="9.5"/></svg>1 doc.</span>
+                </td>
+                <td><span class="status s-yellow">Em análise</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">TFG 915.234</td>
+                <td>ONG Esperança</td>
+                <td><span class="fonte-tag tgov">TransfereGOV</span></td>
+                <td>R$ 180.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill medium" style="width:67%"></div></div>
+                    <span class="exec-pct">67%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Nov/2025<br><span style="font-size:9.5px;color:var(--orange-text);font-weight:600;">⚠ 152 dias</span></td>
+                <td><span class="pending-chip" style="color:var(--yellow-text);">
+                  <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="#9A6800" stroke-width="2"><circle cx="7" cy="7" r="5"/><line x1="7" y1="4.5" x2="7" y2="7.5"/><line x1="7" y1="9" x2="7" y2="9.5"/></svg>2 docs.</span>
+                </td>
+                <td><span class="status s-yellow">Em análise</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">FEAS 2025-112</td>
+                <td>Lar do Idoso São José</td>
+                <td><span class="fonte-tag feas">FEAS / FNAS</span></td>
+                <td>R$ 140.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill medium" style="width:70%"></div></div>
+                    <span class="exec-pct">70%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Nov/2025</td>
+                <td><span class="pending-chip" style="color:var(--red-text);">
+                  <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="var(--red-text)" stroke-width="2"><path d="M7 2L13 12H1L7 2z"/><line x1="7" y1="6" x2="7" y2="9"/></svg>3 irregul.</span>
+                </td>
+                <td><span class="status s-red">Glosada</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">MUN 2025-018</td>
+                <td>Centro Comunitário Sul</td>
+                <td><span class="fonte-tag prop">Rec. Próprios</span></td>
+                <td>R$ 245.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:80%"></div></div>
+                    <span class="exec-pct">80%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Dez/2025</td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-yellow">Em análise</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">TFG 916.441</td>
+                <td>Inst. São Francisco</td>
+                <td><span class="fonte-tag tgov">TransfereGOV</span></td>
+                <td>R$ 215.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:100%"></div></div>
+                    <span class="exec-pct">100%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Dez/2025</td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-green">Aprovada</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">FNAS 2025-08</td>
+                <td>APAE Municipal</td>
+                <td><span class="fonte-tag feas">FEAS / FNAS</span></td>
+                <td>R$ 120.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill medium" style="width:71%"></div></div>
+                    <span class="exec-pct">71%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Dez/2025<br><span style="font-size:9.5px;color:var(--orange-text);font-weight:600;">⚠ Rel. parcial</span></td>
+                <td><span class="pending-chip" style="color:var(--yellow-text);">
+                  <svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="#9A6800" stroke-width="2"><circle cx="7" cy="7" r="5"/><line x1="7" y1="4.5" x2="7" y2="7.5"/><line x1="7" y1="9" x2="7" y2="9.5"/></svg>1 doc.</span>
+                </td>
+                <td><span class="status s-yellow">Em análise</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">EP 2024-1033</td>
+                <td>Inst. São Francisco</td>
+                <td><span class="fonte-tag ep">Emenda Parl.</span></td>
+                <td>R$ 180.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:80%"></div></div>
+                    <span class="exec-pct">80%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Set/2025<br><span style="font-size:9.5px;color:var(--orange-text);font-weight:600;">⚠ 87 dias</span></td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-green">Aprovada</span></td>
+              </tr>
+              <tr>
+                <td style="font-family:monospace;font-size:11px;color:var(--muted);">MUN 2025-022</td>
+                <td>Casa da Criança</td>
+                <td><span class="fonte-tag prop">Rec. Próprios</span></td>
+                <td>R$ 98.000</td>
+                <td>
+                  <div class="exec-bar-wrap">
+                    <div class="exec-bar-track"><div class="exec-bar-fill high" style="width:95%"></div></div>
+                    <span class="exec-pct">95%</span>
+                  </div>
+                </td>
+                <td style="font-size:11px;">Dez/2025</td>
+                <td><span class="pending-chip zero"><svg width="10" height="10" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l3 3 5-5"/></svg>Nenhuma</span></td>
+                <td><span class="status s-green">Aprovada</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="padding:10px 22px;border-top:1px solid var(--border-light);display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-size:10.5px;color:var(--muted);">Exibindo 10 de 33 instrumentos</span>
+          <button style="font-family:var(--font-body);font-size:11px;font-weight:600;color:var(--blue-text);background:var(--blue-bg);border:none;border-radius:6px;padding:5px 14px;cursor:pointer;">Ver todos os instrumentos</button>
+        </div>
+      </div>
+
     </section>
 
     <!-- ══════════════════════════════════════
@@ -1835,15 +2601,386 @@ tbody tr:hover td { background: #FAFBFF; }
         <div class="page-title">Farol de Metas</div>
       </div>
 
+      <!-- Filter Bar -->
+      <div class="fonte-filter-bar">
+        <span class="fonte-filter-label">Fonte de dados</span>
+        <button class="fonte-pill active" id="fpill-all" data-fonte="all"
+                onclick="filterFarol('all',this)"
+                style="background:var(--dark);border-color:var(--dark);color:#fff">
+          Todas as fontes
+        </button>
+        <button class="fonte-pill" id="fpill-cad" data-fonte="cad" onclick="filterFarol('cad',this)">
+          <span class="fonte-pill-dot" style="background:#1565C0"></span>CAD Único
+        </button>
+        <button class="fonte-pill" id="fpill-rais" data-fonte="rais" onclick="filterFarol('rais',this)">
+          <span class="fonte-pill-dot" style="background:#E65100"></span>RAIS
+        </button>
+        <button class="fonte-pill" id="fpill-cnis" data-fonte="cnis" onclick="filterFarol('cnis',this)">
+          <span class="fonte-pill-dot" style="background:#6A1B9A"></span>CNIS
+        </button>
+        <button class="fonte-pill" id="fpill-sicon" data-fonte="sicon" onclick="filterFarol('sicon',this)">
+          <span class="fonte-pill-dot" style="background:#2E7D32"></span>SICON
+        </button>
+        <button class="fonte-pill" id="fpill-bf" data-fonte="bf" onclick="filterFarol('bf',this)">
+          <span class="fonte-pill-dot" style="background:#880E4F"></span>Bolsa Família
+        </button>
+      </div>
+
+      <!-- Platform Data Panels -->
+      <div class="fonte-panels-wrap">
+
+        <!-- CAD Único -->
+        <div class="fonte-panel" id="panel-cad">
+          <div class="fonte-panel-left">
+            <div class="fonte-ring-wrap">
+              <svg viewBox="0 0 100 100" width="96" height="96">
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#E8F0FE" stroke-width="8"/>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#1565C0" stroke-width="8"
+                        stroke-linecap="round" stroke-dasharray="186.3 238.8"
+                        transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="fonte-ring-label">
+                <div class="fonte-ring-pct" style="color:#1565C0">78%</div>
+                <div class="fonte-ring-sub">Atualizados</div>
+              </div>
+            </div>
+            <span class="fonte-panel-badge" style="background:#E8F0FE;color:#1565C0">CAD Único</span>
+            <div class="fonte-panel-name" style="color:#1565C0">Cadastro Único<br>para Programas Sociais</div>
+          </div>
+          <div class="fonte-panel-metrics">
+            <div>
+              <div class="fpm-label">Famílias Cadastradas</div>
+              <div class="fpm-val" style="color:#1565C0">2.847</div>
+              <div class="fpm-trend up">↑ +12% ao ano</div>
+            </div>
+            <div>
+              <div class="fpm-label">Cadastros Atualizados</div>
+              <div class="fpm-val" style="color:#1565C0">78%</div>
+              <div class="fpm-sub">menos de 2 anos</div>
+            </div>
+            <div>
+              <div class="fpm-label">Atualização Pendente</div>
+              <div class="fpm-val" style="color:#E65100">342</div>
+              <div class="fpm-trend warn">↗ requer atenção</div>
+            </div>
+            <div>
+              <div class="fpm-label">Renda Per Capita Média</div>
+              <div class="fpm-val" style="color:#1565C0">R$198</div>
+              <div class="fpm-sub">por membro familiar</div>
+            </div>
+            <div>
+              <div class="fpm-label">Em Extrema Pobreza</div>
+              <div class="fpm-val" style="color:#E65100">1.204</div>
+              <div class="fpm-sub">42% do total</div>
+            </div>
+            <div>
+              <div class="fpm-label">Novos Cadastros</div>
+              <div class="fpm-val" style="color:#1565C0">127</div>
+              <div class="fpm-sub">no semestre</div>
+            </div>
+          </div>
+          <div class="fonte-sparkline-wrap">
+            <div class="fonte-sparkline-label">Evolução de<br>Cadastros — 2025</div>
+            <svg width="120" height="50" viewBox="0 0 120 50">
+              <defs>
+                <linearGradient id="cad-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#1565C0" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#1565C0" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="5,42 27,34.1 49,23.5 71,16 93,9 115,5 115,48 5,48" fill="url(#cad-grad)"/>
+              <polyline points="5,42 27,34.1 49,23.5 71,16 93,9 115,5"
+                        fill="none" stroke="#1565C0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="115" cy="5" r="3" fill="#1565C0"/>
+            </svg>
+            <div class="fonte-sparkline-months"><span>Jan</span><span>Mar</span><span>Jun</span></div>
+          </div>
+        </div>
+
+        <!-- RAIS -->
+        <div class="fonte-panel" id="panel-rais">
+          <div class="fonte-panel-left">
+            <div class="fonte-ring-wrap">
+              <svg viewBox="0 0 100 100" width="96" height="96">
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#FFF3E0" stroke-width="8"/>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#E65100" stroke-width="8"
+                        stroke-linecap="round" stroke-dasharray="152.8 238.8"
+                        transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="fonte-ring-label">
+                <div class="fonte-ring-pct" style="color:#E65100">64%</div>
+                <div class="fonte-ring-sub">Vínculos Formais</div>
+              </div>
+            </div>
+            <span class="fonte-panel-badge" style="background:#FFF3E0;color:#E65100">RAIS</span>
+            <div class="fonte-panel-name" style="color:#E65100">Relação Anual de<br>Informações Sociais</div>
+          </div>
+          <div class="fonte-panel-metrics">
+            <div>
+              <div class="fpm-label">Trabalhadores Ativos</div>
+              <div class="fpm-val" style="color:#E65100">1.203</div>
+              <div class="fpm-trend up">↑ +8,9% ao ano</div>
+            </div>
+            <div>
+              <div class="fpm-label">Remuneração Média</div>
+              <div class="fpm-val" style="color:#E65100">R$3.240</div>
+              <div class="fpm-sub">setor assistência</div>
+            </div>
+            <div>
+              <div class="fpm-label">Vínculos Formais</div>
+              <div class="fpm-val" style="color:#E65100">64%</div>
+              <div class="fpm-trend warn">↗ meta: 75%</div>
+            </div>
+            <div>
+              <div class="fpm-label">Admissões no Período</div>
+              <div class="fpm-val" style="color:#E65100">89</div>
+              <div class="fpm-sub">1º semestre 2025</div>
+            </div>
+            <div>
+              <div class="fpm-label">Desligamentos</div>
+              <div class="fpm-val" style="color:#8C3A00">34</div>
+              <div class="fpm-sub">taxa de 2,8%</div>
+            </div>
+            <div>
+              <div class="fpm-label">Capacitados (RAIS)</div>
+              <div class="fpm-val" style="color:#E65100">612</div>
+              <div class="fpm-trend up">↑ meta atingida</div>
+            </div>
+          </div>
+          <div class="fonte-sparkline-wrap">
+            <div class="fonte-sparkline-label">Evolução de<br>Vínculos — 2025</div>
+            <svg width="120" height="50" viewBox="0 0 120 50">
+              <defs>
+                <linearGradient id="rais-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#E65100" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#E65100" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="5,42 27,31.9 49,23.8 71,13.1 93,7.6 115,5 115,48 5,48" fill="url(#rais-grad)"/>
+              <polyline points="5,42 27,31.9 49,23.8 71,13.1 93,7.6 115,5"
+                        fill="none" stroke="#E65100" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="115" cy="5" r="3" fill="#E65100"/>
+            </svg>
+            <div class="fonte-sparkline-months"><span>Jan</span><span>Mar</span><span>Jun</span></div>
+          </div>
+        </div>
+
+        <!-- CNIS -->
+        <div class="fonte-panel" id="panel-cnis">
+          <div class="fonte-panel-left">
+            <div class="fonte-ring-wrap">
+              <svg viewBox="0 0 100 100" width="96" height="96">
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#F3E5F5" stroke-width="8"/>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#6A1B9A" stroke-width="8"
+                        stroke-linecap="round" stroke-dasharray="217.3 238.8"
+                        transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="fonte-ring-label">
+                <div class="fonte-ring-pct" style="color:#6A1B9A">91%</div>
+                <div class="fonte-ring-sub">Cobertura</div>
+              </div>
+            </div>
+            <span class="fonte-panel-badge" style="background:#F3E5F5;color:#6A1B9A">CNIS</span>
+            <div class="fonte-panel-name" style="color:#6A1B9A">Cadastro Nacional de<br>Informações Sociais</div>
+          </div>
+          <div class="fonte-panel-metrics">
+            <div>
+              <div class="fpm-label">Beneficiários BPC</div>
+              <div class="fpm-val" style="color:#6A1B9A">4.521</div>
+              <div class="fpm-trend up">↑ +5,2% ao ano</div>
+            </div>
+            <div>
+              <div class="fpm-label">Valor Médio BPC</div>
+              <div class="fpm-val" style="color:#6A1B9A">R$1.412</div>
+              <div class="fpm-sub">por beneficiário</div>
+            </div>
+            <div>
+              <div class="fpm-label">Cobertura</div>
+              <div class="fpm-val" style="color:#6A1B9A">91%</div>
+              <div class="fpm-trend up">↑ acima da meta</div>
+            </div>
+            <div>
+              <div class="fpm-label">Verificações Pendentes</div>
+              <div class="fpm-val" style="color:#8C3A00">412</div>
+              <div class="fpm-trend warn">↗ requer atenção</div>
+            </div>
+            <div>
+              <div class="fpm-label">Consistência dos Dados</div>
+              <div class="fpm-val" style="color:#6A1B9A">89%</div>
+              <div class="fpm-sub">registros válidos</div>
+            </div>
+            <div>
+              <div class="fpm-label">Divergências</div>
+              <div class="fpm-val" style="color:#8C3A00">234</div>
+              <div class="fpm-sub">em revisão</div>
+            </div>
+          </div>
+          <div class="fonte-sparkline-wrap">
+            <div class="fonte-sparkline-label">Evolução de<br>Benefícios — 2025</div>
+            <svg width="120" height="50" viewBox="0 0 120 50">
+              <defs>
+                <linearGradient id="cnis-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#6A1B9A" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#6A1B9A" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="5,42 27,31.4 49,24.5 71,16 93,8.8 115,5 115,48 5,48" fill="url(#cnis-grad)"/>
+              <polyline points="5,42 27,31.4 49,24.5 71,16 93,8.8 115,5"
+                        fill="none" stroke="#6A1B9A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="115" cy="5" r="3" fill="#6A1B9A"/>
+            </svg>
+            <div class="fonte-sparkline-months"><span>Jan</span><span>Mar</span><span>Jun</span></div>
+          </div>
+        </div>
+
+        <!-- SICON -->
+        <div class="fonte-panel" id="panel-sicon">
+          <div class="fonte-panel-left">
+            <div class="fonte-ring-wrap">
+              <svg viewBox="0 0 100 100" width="96" height="96">
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#E8F5E9" stroke-width="8"/>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#2E7D32" stroke-width="8"
+                        stroke-linecap="round" stroke-dasharray="172 238.8"
+                        transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="fonte-ring-label">
+                <div class="fonte-ring-pct" style="color:#2E7D32">72%</div>
+                <div class="fonte-ring-sub">Execução</div>
+              </div>
+            </div>
+            <span class="fonte-panel-badge" style="background:#E8F5E9;color:#2E7D32">SICON</span>
+            <div class="fonte-panel-name" style="color:#2E7D32">Sistema de<br>Convênios — SICONV</div>
+          </div>
+          <div class="fonte-panel-metrics">
+            <div>
+              <div class="fpm-label">Contratos Ativos</div>
+              <div class="fpm-val" style="color:#2E7D32">143</div>
+              <div class="fpm-trend up">↑ +18 este mês</div>
+            </div>
+            <div>
+              <div class="fpm-label">Valor Total</div>
+              <div class="fpm-val" style="color:#2E7D32">R$42M</div>
+              <div class="fpm-sub">contratos vigentes</div>
+            </div>
+            <div>
+              <div class="fpm-label">Execução Acumulada</div>
+              <div class="fpm-val" style="color:#2E7D32">72%</div>
+              <div class="fpm-trend up">↑ meta: 70%</div>
+            </div>
+            <div>
+              <div class="fpm-label">Em Análise</div>
+              <div class="fpm-val" style="color:#8C3A00">27</div>
+              <div class="fpm-sub">aguardando aprovação</div>
+            </div>
+            <div>
+              <div class="fpm-label">Contratos Vencidos</div>
+              <div class="fpm-val" style="color:#8B1A1A">3</div>
+              <div class="fpm-trend down">↓ sem renovação</div>
+            </div>
+            <div>
+              <div class="fpm-label">Adimplência</div>
+              <div class="fpm-val" style="color:#2E7D32">94%</div>
+              <div class="fpm-sub">prestações em dia</div>
+            </div>
+          </div>
+          <div class="fonte-sparkline-wrap">
+            <div class="fonte-sparkline-label">Execução<br>Mensal — 2025</div>
+            <svg width="120" height="50" viewBox="0 0 120 50">
+              <defs>
+                <linearGradient id="sicon-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#2E7D32" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#2E7D32" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="5,42 27,33.6 49,26 71,19.3 93,12.5 115,5 115,48 5,48" fill="url(#sicon-grad)"/>
+              <polyline points="5,42 27,33.6 49,26 71,19.3 93,12.5 115,5"
+                        fill="none" stroke="#2E7D32" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="115" cy="5" r="3" fill="#2E7D32"/>
+            </svg>
+            <div class="fonte-sparkline-months"><span>Jan</span><span>Mar</span><span>Jun</span></div>
+          </div>
+        </div>
+
+        <!-- Bolsa Família -->
+        <div class="fonte-panel" id="panel-bf">
+          <div class="fonte-panel-left">
+            <div class="fonte-ring-wrap">
+              <svg viewBox="0 0 100 100" width="96" height="96">
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#FCE4EC" stroke-width="8"/>
+                <circle cx="50" cy="50" r="43" fill="none" stroke="#880E4F" stroke-width="8"
+                        stroke-linecap="round" stroke-dasharray="198.2 238.8"
+                        transform="rotate(-90 50 50)"/>
+              </svg>
+              <div class="fonte-ring-label">
+                <div class="fonte-ring-pct" style="color:#880E4F">83%</div>
+                <div class="fonte-ring-sub">Elegíveis Ativos</div>
+              </div>
+            </div>
+            <span class="fonte-panel-badge" style="background:#FCE4EC;color:#880E4F">Bolsa Família</span>
+            <div class="fonte-panel-name" style="color:#880E4F">Programa Bolsa<br>Família — PBF</div>
+          </div>
+          <div class="fonte-panel-metrics">
+            <div>
+              <div class="fpm-label">Famílias Beneficiárias</div>
+              <div class="fpm-val" style="color:#880E4F">3.156</div>
+              <div class="fpm-trend up">↑ +9,3% ao ano</div>
+            </div>
+            <div>
+              <div class="fpm-label">Benefício Médio</div>
+              <div class="fpm-val" style="color:#880E4F">R$689</div>
+              <div class="fpm-sub">por família/mês</div>
+            </div>
+            <div>
+              <div class="fpm-label">Cobertura Elegíveis</div>
+              <div class="fpm-val" style="color:#880E4F">83%</div>
+              <div class="fpm-trend up">↑ acima da meta</div>
+            </div>
+            <div>
+              <div class="fpm-label">Não Cadastrados</div>
+              <div class="fpm-val" style="color:#8C3A00">624</div>
+              <div class="fpm-trend warn">↗ busca ativa</div>
+            </div>
+            <div>
+              <div class="fpm-label">Valor Total Mês</div>
+              <div class="fpm-val" style="color:#880E4F">R$2,2M</div>
+              <div class="fpm-sub">transferências</div>
+            </div>
+            <div>
+              <div class="fpm-label">Condicionalidades</div>
+              <div class="fpm-val" style="color:#880E4F">91%</div>
+              <div class="fpm-sub">cumpridas</div>
+            </div>
+          </div>
+          <div class="fonte-sparkline-wrap">
+            <div class="fonte-sparkline-label">Evolução de<br>Beneficiários — 2025</div>
+            <svg width="120" height="50" viewBox="0 0 120 50">
+              <defs>
+                <linearGradient id="bf-grad" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#880E4F" stop-opacity="0.22"/>
+                  <stop offset="100%" stop-color="#880E4F" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="5,42 27,33.7 49,25.3 71,15.6 93,10 115,5 115,48 5,48" fill="url(#bf-grad)"/>
+              <polyline points="5,42 27,33.7 49,25.3 71,15.6 93,10 115,5"
+                        fill="none" stroke="#880E4F" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="115" cy="5" r="3" fill="#880E4F"/>
+            </svg>
+            <div class="fonte-sparkline-months"><span>Jan</span><span>Mar</span><span>Jun</span></div>
+          </div>
+        </div>
+
+      </div><!-- /fonte-panels-wrap -->
+
+      <!-- KPI Summary -->
       <div class="kpi-row cols-3" style="margin-bottom:24px">
         <div class="kpi-card accent-green">
           <div class="kpi-label">Metas no Prazo</div>
-          <div class="kpi-value">5</div>
-          <div class="kpi-sub"><span class="badge badge-green">55,6% das metas</span></div>
+          <div class="kpi-value">7</div>
+          <div class="kpi-sub"><span class="badge badge-green">58,3% das metas</span></div>
         </div>
         <div class="kpi-card accent-orange">
           <div class="kpi-label">Metas em Atenção</div>
-          <div class="kpi-value">2</div>
+          <div class="kpi-value">3</div>
           <div class="kpi-sub"><span class="badge badge-orange">Risco moderado</span></div>
         </div>
         <div class="kpi-card accent-red">
@@ -1853,9 +2990,11 @@ tbody tr:hover td { background: #FAFBFF; }
         </div>
       </div>
 
-      <div class="farol-grid">
+      <!-- Farol Grid -->
+      <div class="farol-grid" id="farol-grid">
 
-        <div class="farol-card">
+        <div class="farol-card" data-fonte="cad">
+          <div class="farol-fonte-tag ftag-cad"><span class="farol-fonte-tag-dot"></span>CAD Único</div>
           <div class="farol-dot f-green"></div>
           <div class="farol-meta-name">Cobertura de Famílias — CRAS</div>
           <div class="farol-meta-sub">Meta: 85% das famílias vulneráveis referenciadas</div>
@@ -1873,115 +3012,8 @@ tbody tr:hover td { background: #FAFBFF; }
           <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
         </div>
 
-        <div class="farol-card">
-          <div class="farol-dot f-green"></div>
-          <div class="farol-meta-name">Execução Orçamentária Municipal</div>
-          <div class="farol-meta-sub">Meta: ≥ 60% liquidado no 1º semestre</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">60%</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Realizado</div>
-              <div class="farol-stat-val" style="color:var(--green-text)">62,9%</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:63%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-green">No prazo</span></div>
-        </div>
-
-        <div class="farol-card">
-          <div class="farol-dot f-green"></div>
-          <div class="farol-meta-name">Trabalhadores Capacitados</div>
-          <div class="farol-meta-sub">Meta: 600 trabalhadores capacitados em 2025</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">600</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Realizado</div>
-              <div class="farol-stat-val" style="color:var(--green-text)">612</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:100%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
-        </div>
-
-        <div class="farol-card">
-          <div class="farol-dot f-green"></div>
-          <div class="farol-meta-name">Prestações de Contas Aprovadas</div>
-          <div class="farol-meta-sub">Meta: ≥ 65% das prestações aprovadas</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">65%</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Realizado</div>
-              <div class="farol-stat-val" style="color:var(--green-text)">67,9%</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:68%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-green">No prazo</span></div>
-        </div>
-
-        <div class="farol-card">
-          <div class="farol-dot f-green"></div>
-          <div class="farol-meta-name">Satisfação dos Usuários</div>
-          <div class="farol-meta-sub">Meta: Índice ≥ 80% nas pesquisas de satisfação</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">80%</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Realizado</div>
-              <div class="farol-stat-val" style="color:var(--green-text)">87,4%</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:87%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
-        </div>
-
-        <div class="farol-card">
-          <div class="farol-dot f-yellow"></div>
-          <div class="farol-meta-name">Execução Financeira Multifonte</div>
-          <div class="farol-meta-sub">Meta: ≥ 70% de execução acumulada</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">70%</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Realizado</div>
-              <div class="farol-stat-val" style="color:var(--orange-text)">61,1%</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-orange" style="width:61%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-orange">Atenção</span></div>
-        </div>
-
-        <div class="farol-card">
-          <div class="farol-dot f-yellow"></div>
-          <div class="farol-meta-name">Renovação de Contratos</div>
-          <div class="farol-meta-sub">Meta: 0 contratos vencidos sem renovação</div>
-          <div class="farol-stats">
-            <div>
-              <div class="farol-stat-label">Meta</div>
-              <div class="farol-stat-val">0</div>
-            </div>
-            <div>
-              <div class="farol-stat-label">Vencidos</div>
-              <div class="farol-stat-val" style="color:var(--orange-text)">3</div>
-            </div>
-          </div>
-          <div class="prog-wrap"><div class="prog-fill prog-orange" style="width:70%"></div></div>
-          <div style="margin-top:8px"><span class="badge badge-orange">Atenção</span></div>
-        </div>
-
-        <div class="farol-card">
+        <div class="farol-card" data-fonte="cad">
+          <div class="farol-fonte-tag ftag-cad"><span class="farol-fonte-tag-dot"></span>CAD Único</div>
           <div class="farol-dot f-red"></div>
           <div class="farol-meta-name">Atendimento PAIF — CRAS</div>
           <div class="farol-meta-sub">Meta: ≥ 85% das famílias ref. atendidas</div>
@@ -1999,7 +3031,160 @@ tbody tr:hover td { background: #FAFBFF; }
           <div style="margin-top:8px"><span class="badge badge-red">Crítico</span></div>
         </div>
 
-        <div class="farol-card">
+        <div class="farol-card" data-fonte="rais">
+          <div class="farol-fonte-tag ftag-rais"><span class="farol-fonte-tag-dot"></span>RAIS</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Trabalhadores Capacitados</div>
+          <div class="farol-meta-sub">Meta: 600 trabalhadores capacitados em 2025</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">600</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">612</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:100%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="rais">
+          <div class="farol-fonte-tag ftag-rais"><span class="farol-fonte-tag-dot"></span>RAIS</div>
+          <div class="farol-dot f-yellow"></div>
+          <div class="farol-meta-name">Emprego Formal no SUAS</div>
+          <div class="farol-meta-sub">Meta: ≥ 75% dos trabalhadores com vínculo formal</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">75%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--orange-text)">64%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-orange" style="width:64%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-orange">Atenção</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="cnis">
+          <div class="farol-fonte-tag ftag-cnis"><span class="farol-fonte-tag-dot"></span>CNIS</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Satisfação dos Usuários</div>
+          <div class="farol-meta-sub">Meta: Índice ≥ 80% nas pesquisas de satisfação</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">80%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">87,4%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:87%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="cnis">
+          <div class="farol-fonte-tag ftag-cnis"><span class="farol-fonte-tag-dot"></span>CNIS</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Cobertura de Benefícios BPC</div>
+          <div class="farol-meta-sub">Meta: ≥ 90% dos elegíveis BPC atendidos</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">90%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">91,4%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:91%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="sicon">
+          <div class="farol-fonte-tag ftag-sicon"><span class="farol-fonte-tag-dot"></span>SICON</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Execução Orçamentária Municipal</div>
+          <div class="farol-meta-sub">Meta: ≥ 60% liquidado no 1º semestre</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">60%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">62,9%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:63%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">No prazo</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="sicon">
+          <div class="farol-fonte-tag ftag-sicon"><span class="farol-fonte-tag-dot"></span>SICON</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Prestações de Contas Aprovadas</div>
+          <div class="farol-meta-sub">Meta: ≥ 65% das prestações aprovadas</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">65%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">67,9%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:68%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">No prazo</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="sicon">
+          <div class="farol-fonte-tag ftag-sicon"><span class="farol-fonte-tag-dot"></span>SICON</div>
+          <div class="farol-dot f-yellow"></div>
+          <div class="farol-meta-name">Execução Financeira Multifonte</div>
+          <div class="farol-meta-sub">Meta: ≥ 70% de execução acumulada</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">70%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--orange-text)">61,1%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-orange" style="width:61%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-orange">Atenção</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="sicon">
+          <div class="farol-fonte-tag ftag-sicon"><span class="farol-fonte-tag-dot"></span>SICON</div>
+          <div class="farol-dot f-yellow"></div>
+          <div class="farol-meta-name">Renovação de Contratos</div>
+          <div class="farol-meta-sub">Meta: 0 contratos vencidos sem renovação</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">0</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Vencidos</div>
+              <div class="farol-stat-val" style="color:var(--orange-text)">3</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-orange" style="width:70%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-orange">Atenção</span></div>
+        </div>
+
+        <div class="farol-card" data-fonte="sicon">
+          <div class="farol-fonte-tag ftag-sicon"><span class="farol-fonte-tag-dot"></span>SICON</div>
           <div class="farol-dot f-red"></div>
           <div class="farol-meta-name">Execução FEAS Estadual</div>
           <div class="farol-meta-sub">Meta: ≥ 50% dos recursos estaduais executados</div>
@@ -2017,7 +3202,26 @@ tbody tr:hover td { background: #FAFBFF; }
           <div style="margin-top:8px"><span class="badge badge-red">Crítico</span></div>
         </div>
 
-      </div>
+        <div class="farol-card" data-fonte="bf">
+          <div class="farol-fonte-tag ftag-bf"><span class="farol-fonte-tag-dot"></span>Bolsa Família</div>
+          <div class="farol-dot f-green"></div>
+          <div class="farol-meta-name">Famílias Beneficiárias Ativas</div>
+          <div class="farol-meta-sub">Meta: ≥ 80% dos elegíveis com benefício ativo</div>
+          <div class="farol-stats">
+            <div>
+              <div class="farol-stat-label">Meta</div>
+              <div class="farol-stat-val">80%</div>
+            </div>
+            <div>
+              <div class="farol-stat-label">Realizado</div>
+              <div class="farol-stat-val" style="color:var(--green-text)">83,2%</div>
+            </div>
+          </div>
+          <div class="prog-wrap"><div class="prog-fill prog-green" style="width:83%"></div></div>
+          <div style="margin-top:8px"><span class="badge badge-green">Superada</span></div>
+        </div>
+
+      </div><!-- /farol-grid -->
     </section>
 
   </div><!-- /content -->
@@ -2051,6 +3255,41 @@ function nav(id, el) {
   if (sec) sec.classList.add('active');
   if (el)  el.classList.add('active');
   document.getElementById('tbar-title').textContent = LABELS[id] || id;
+}
+
+function filterFarol(fonte, el) {
+  document.querySelectorAll('.fonte-pill').forEach(function(p) {
+    p.classList.remove('active');
+    p.style.background = '';
+    p.style.borderColor = '';
+    p.style.color = '';
+  });
+  el.classList.add('active');
+  if (fonte === 'all') {
+    el.style.background = 'var(--dark)';
+    el.style.borderColor = 'var(--dark)';
+    el.style.color = '#fff';
+  } else {
+    var dot = el.querySelector('.fonte-pill-dot');
+    var c = dot ? dot.style.background : 'var(--blue)';
+    el.style.background = c;
+    el.style.borderColor = c;
+    el.style.color = '#fff';
+  }
+  document.querySelectorAll('.fonte-panel').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  if (fonte !== 'all') {
+    var panel = document.getElementById('panel-' + fonte);
+    if (panel) panel.classList.add('active');
+  }
+  document.querySelectorAll('#farol-grid .farol-card').forEach(function(card) {
+    if (fonte === 'all' || card.dataset.fonte === fonte) {
+      card.classList.remove('fc-hidden');
+    } else {
+      card.classList.add('fc-hidden');
+    }
+  });
 }
 </script>
 </body>

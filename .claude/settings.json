@@ -24,7 +24,28 @@
       "Bash(git -C \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste\" add index.html)",
       "Bash(git -C c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste commit -m ' *)",
       "Bash(git -C \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste\" push origin main)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(node \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\\\\screenshot.mjs\" \"http://localhost:3000/relatorio-fisico-financeiro.html\" relatorio-programas)",
+      "PowerShell(Start-Process -NoNewWindow -FilePath \"node\" -ArgumentList \"serve.mjs\" -WorkingDirectory \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\")",
+      "PowerShell(node \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\\\\screenshot.mjs\" \"http://localhost:3000/relatorio-fisico-financeiro.html\" relatorio-programas)",
+      "Read(//c/Users/lucas/.claude/projects/c--Users-lucas-Documents-EloGroup-2026-01-prototipo-assiste/memory/**)",
+      "PowerShell(Start-Process -FilePath \"python\" -ArgumentList \"-m\", \"http.server\", \"3000\" -WorkingDirectory \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\" -WindowStyle Hidden)",
+      "PowerShell(python \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\\\\take_screenshots.py\" \"http://localhost:3000/relatorio-fisico-financeiro.html\" 2>&1)",
+      "Bash(node \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste/screenshot.mjs\" http://localhost:3000/prestacao-de-contas.html relatorio-pc)",
+      "PowerShell(Start-Process -FilePath \"node\" -ArgumentList \"serve.mjs\" -WorkingDirectory \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\" -NoNewWindow -PassThru)",
+      "PowerShell(node \"c:\\\\Users\\\\lucas\\\\Documents\\\\EloGroup\\\\2026\\\\01_prototipo_assiste\\\\screenshot.mjs\" \"http://localhost:3000/prestacao-de-contas.html\" \"relatorio-pc\")",
+      "PowerShell(\\(Get-Command node -ErrorAction SilentlyContinue\\).Source; \\(Get-Command python -ErrorAction SilentlyContinue\\).Source; \\(Get-Command python3 -ErrorAction SilentlyContinue\\).Source)",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\nodejs\\\\node.exe\" -ErrorAction SilentlyContinue; Get-ChildItem \"$env:APPDATA\\\\npm\\\\node.cmd\" -ErrorAction SilentlyContinue; Get-ChildItem \"C:\\\\Users\\\\lucas\\\\AppData\\\\Local\\\\Programs\\\\nodejs\\\\node.exe\" -ErrorAction SilentlyContinue; where.exe node 2>$null)",
+      "Bash(node \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste/screenshot.mjs\" \"http://localhost:3000\" farol)",
+      "PowerShell(node \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste/screenshot.mjs\" \"http://localhost:3000\" farol)",
+      "Bash(python3 -m http.server 3000 --directory \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste\")",
+      "Read(//c/Users/lucas/AppData/Local/Programs/Python/**)",
+      "Bash(ls /c/Python*/python.exe)",
+      "Read(//c/Users/lucas/AppData/Local/Microsoft/WindowsApps/**)",
+      "Bash(/c/Users/lucas/AppData/Local/Programs/Python/Python313/python.exe -m http.server 3000 --directory \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste\")",
+      "Bash(/c/Users/lucas/AppData/Local/Programs/Python/Python313/python.exe \"c:/Users/lucas/Documents/EloGroup/2026/01_prototipo_assiste/take_screenshots.py\")",
+      "Bash(cat)",
+      "Bash(/c/Users/lucas/AppData/Local/Programs/Python/Python313/python.exe /tmp/screenshot_farol_filter.py)"
     ]
   }
 }
